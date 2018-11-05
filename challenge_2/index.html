@@ -9,20 +9,17 @@
         <link ref-"stylesheet" type="text/css" href="style.css">
 </head>
 <style>
-.schedule {
-    background-color: black;
-    color: white;
-    margin: 20px;
-    padding: 20px;
-} 
-.USA {
-    font-family: "Comic Sans MS", cursive, sans-serif;
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
 }
-.mexico {
-    font-family: "Trebuchet MS", Helvetica, sans-serif
+th, td {
+    padding: 15px;
+    text-align: left;
 }
-.france {
-    font-family: Impact, Charcoal, sans-serif
+table#t01 {
+    width: 100%;    
+    background-color:white;
 }
 </style>
 <body style="background-color:black;">
@@ -51,8 +48,7 @@ New-York-City-Skyline.jpg" height="150" width="169">
         </h2>
         <h3>
             <ul>
-                <a href="usa.gov">USA</a>
-                <li class="USA" style="color:red;">The United States of America (Americuh)
+                <li style="color:red;">The United States of America
             <dl>
                 <dt style="color:white;">New York City</dt>
                 <dd style="color:blue;">Visit the Museum of Modern Art</dd> 
@@ -74,8 +70,7 @@ New-York-City-Skyline.jpg" height="150" width="169">
             </li>
             </ul>
             <ul>
-                <a href="gob.mx">Mexico</a>
-                <li class="mexico" style="color:green;">Mexico (M&eacute;xico)
+                <li style="color:green;">Mexico
             <dl>
                 <dt style="color:white;">Durango</dt>
                 <dd style="color:red;">Visit family</dd>
@@ -97,8 +92,7 @@ New-York-City-Skyline.jpg" height="150" width="169">
             </li>
             </ul>
             <ul>
-                <a href="gouvernement.fr">France</a>
-                 <li class="france" style="color:blue;">France (France)
+                 <li style="color:blue;">France
             <dl>
                 <dt style="color:white;">Paris</dt>
                 <dd style="color:red;">Eiffel Tower</dd>
@@ -120,62 +114,53 @@ New-York-City-Skyline.jpg" height="150" width="169">
             </li>
             </ul>
         </h3>
-    
-    <table class="schedule" style="width:100%">
+        <h4>Styling Tables</h4>
+
+<table style="width:100%">
   <tr>
-    <th>Class Period</th>
-    <th>Time</th>
-    <th>Room #</th>
-    <th>Class</th>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
   </tr>
   <tr>
-    <td>1</td>
-    <td>8:00-8:50</td> 
-    <td>344</td>
-    <td>H French 3</td>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
   </tr>
-   <tr>
-    <td>2</td>
-    <td>8:55-9:45</td> 
-    <td>224</td>
-    <td>R Civics</td>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
   </tr>
-   <tr>
-    <td>3</td>
-    <td>9:50-10:40</td> 
-    <td>239</td>
-    <td>HS Web Dev I:HTML Client-1</td>
-  </tr>
-   <tr>
-    <td>4</td>
-    <td>10:45-11:35</td> 
-    <td>327</td>
-    <td>R Adv Algebra With Trig</td>
-  </tr>
-   <tr>
-    <td>5</td>
-    <td>11:40-12:30</td> 
-    <td>LR</td>
-    <td>Lunch</td>
-  </tr>
-   <tr>
-    <td>6</td>
-    <td>12:35-1:25</td> 
-    <td>136</td>
-    <td>H Software App 2</td>
-  </tr>
-   <tr>
-    <td>7</td>
-    <td>1:30-2:20</td> 
-    <td>261</td>
-    <td>AP English Language </td>
-  </tr>
-   <tr>
-    <td>8</td>
-    <td>2:25-3:15</td> 
-    <td>129</td>
-    <td>H Physics</td>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+    <td>80</td>
   </tr>
 </table>
-    </body>
+<br>
+
+<table id="t01">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+    <td>80</td>
+  </tr>
+</table>
+</body>
 </html>
