@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Challenge 4</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+        <link ref-"stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: orange;">
+            <a class="navbar-brand" href="#">Challenge 4</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">One Direction<span 
+class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Niall Horan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Harry Styles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Louis Tomlinson</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liam Payne</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Zayn Malik</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" 
+placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" 
+type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">One Direction</h1>
+                <p class="lead">an English-Irish pop music band based in London<h/p>
+            </div>
+            <div class="row">
+                <div class="card text-white bg-primary mb-3" style="width: 18rem;">
+                    <img class="card-img-top" src="http://www.boybands.co.uk/wp-content/uploads/2014/08/niallinfo.png" alt="Niall Horan">
+                    <div class="card-body">
+                        <h5 class="card-title">Niall Horan</h5>
+                        <p class="card-text">A 25 year old Irish singer and songwriter who rose after auditioning as a solo contestant on The X Factor in 2010.</p>
+                    </div>
+                </div>
+                <div class="card text-white bg-success mb-3" style="width: 18rem;">
+                    <img class="card-img-top" src="https://imgnooz.com/sites/default/files/wallpaper/music/60542/liam-payne-wallpapers-60542-7527076.jpg" alt="Liam Payne">
+                    <div class="card-body">
+                        <h5 class="card-title">Liam James Payne</h5>
+                        <p class="card-text">An English singer/songwriter who rose after auditioning on The X Factor in 2008.</p>
+                    </div>
+                </div>
+                <div class="card text-white bg-danger mb-3" style="width: 18rem;">
+                    <img class="card-img-top" src="https://vignette.wikia.nocookie.net/gleethesecondgeneration/images/f/f2/Harrystyles.png/revision/latest?cb=20130427090013" alt="Harry Styles">
+                    <div class="card-body">
+                        <h5 class="card-title">A 24 year old English singer/songwriter/actor who grew up in Holmes Chapel, Cheshire.</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+                <div class="card text-white bg-warning mb-3" style="width: 18rem;">
+                    <img class="card-img-top" src="https://www.starinfo.club/wp-content/uploads/2015/11/Louis-Tomlinson-7.jpg" alt="Louis Tomlinson">
+                    <div class="card-body">
+                        <h5 class="card-title">Louis William Tomlinson</h5>
+                        <p class="card-text">A 26 year old English singer/songwriter/talent show judge whose career began when he appeared on "If I Had You" and "Waterloo Road".</p>
+                    </div>
+                </div>
+                <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+                    <img class="card-img-top" src="https://i.pinimg.com/236x/e6/ea/25/e6ea25cec906183163a65aba8d6be64a--beautiful-people-youre-beautiful.jpg" alt="Zayn Malik">
+                    <div class="card-body">
+                        <h5 class="card-title">Zayn Malik</h5>
+                        <p class="card-text">A 25 year old English singer/songwriter who auditioned as a solo contestant for The X Factor in 2010.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form>
+            <div class="form-group" style="padding-left: 21px;" >
+                <label for="emailInput">Email address</label>
+                <input type="email" class="form-control" id="emailInput"
+placeholder="name@example.com"> 
+            </div>
+            <div class="form-group" style="padding-left: 21px;">
+                <label for="nameInput">Name</label>
+                <input type="name" class="form-control" id="nameInput"
+placeholder="name">
+            </div>
+            <div class="form-group" style="padding-left: 21px;">
+                <label for="shortMessage">Message</label>
+                <textarea class="form-control" id="shortMessage" rows:"3"></textarea>
+            </div>
+            <button type="submit" class="button">Submit</button>
+        </form>
+    </body>
+</html>
