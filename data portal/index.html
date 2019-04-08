@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>  
+            canvas { /* original black background*/
+                background: black;
+                transition-property: background;
+                transition-duration: 1s;
+                transition-timing-function: linear;
+            } /* background when hovered over*/
+            canvas:hover {
+                background: red;
+                border-radius: 10%;
+                context.fillStyle = "black";
+            }
+        </style>
+    </head>
+    <body>
+    <canvas id = "canvas" width = "400px" height ="400px" >
+        <script>
+            var canvas = document.querySelector("#canvas");
+            var context = canvas.getContext("2d"); 
+            context.strokeStyle = "orange";
+            context.fillStyle = "yellow";
+            context.lineWidth = 5;
+            
+            //moves 5 to the left and 10 down
+            context.translate(-5, 10);
+            
+            // lines being here
+            //context.moveTo(60,304); //move to corner of M
+            //context.lineTo(60,104); // first leg of M
+            //context.lineTo(130,206); // diagonal leg 
+            //context.lineTo(200,104); // second diagonal leg
+            //context.lineTo(200,304); // second leg of M
+            //context.moveTo(265,304); // moving to bottom of F
+            //context.lineTo(265,104); // vertical line of F
+            //context.lineTo(370,104); // top line of F
+            //context.moveTo(265,206); // moves to middle of vertical line
+            //context.lineTo(340,206); // middle line of F
+            // lines end here
+            
+            // curved -- lines start here for M
+            context.moveTo(25,204); // moving to M
+            context.quadraticCurveTo(15, -40, 85, 84);
+            context.quadraticCurveTo(135, 170,180,84);
+            context.quadraticCurveTo(255, -30, 230, 225);
+            context.quadraticCurveTo(205, 430 ,192, 234);
+            context.quadraticCurveTo(200, 120 ,145, 200);
+            context.quadraticCurveTo(130, 230 ,115, 200);
+            context.quadraticCurveTo(60, 120, 67, 220);
+            context.quadraticCurveTo(50, 440, 25, 204);
+            // curved -- lines end here for M
+            
+            //curved -- lines start here for F
+            context.moveTo(255, 314); // moving to F
+            context.quadraticCurveTo(230, 40, 280, 60);
+            context.quadraticCurveTo(500, 80, 285, 115);
+            context.quadraticCurveTo(280, 180, 290, 190);
+            context.quadraticCurveTo(420, 190, 290, 225);
+            context.quadraticCurveTo(280, 360, 255, 314);
+            // curved -- lines end here for F
+            
+            //calls to draw and fill 
+            context.stroke();
+            context.fill();
+            
+        </script>
+        
+    </canvas>
+    </body>
+
+</html>
