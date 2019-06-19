@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lane Tech Map</title>
+        <style>
+            #banner , #banner1{
+                position: absolute;
+                top: 100px;
+            }
+            #banner1 {
+                right: 0;
+            }
+            body {
+  overflow-x: hidden;
+}
+        </style>
+        <link rel= "import" href="index.html">
+    </head>
+    
+    <body style="background-color: #21421e;" width="1000px">
+        
+        <!-- Title and Description -->
+        <h1 align="center" style="color: #FFD700;">Lane Tech Map
+        </h1>
+        
+        <!-- Map Images / Floors -->
+        <img id="banner" style="color: #FFD700;" float="left" border="1" 
+            src="Screen Shot 2019-05-17 at 10.12.43 AM.png">
+        
+        
+        <img id="map1" width="1000" height="1000" align="center" style="position:absolute; TOP:175px; LEFT:425px;"  usemap="#map1557935810891"
+            src="https://www.lanetech.org/wp-content/uploads/2017/10/school_map1.png" alt="School Map">
+        <map id="map1557935810891" name="map1557935810891"><area shape="rect" coords="5,9,926,1090" title="" alt="schoolMap1" href="https://lanetech.org/" target="_blank"></map>
+        
+
+        <!--
+        <img id="scream" width="500" height="600" align="center" style="position:absolute; TOP:175px; LEFT:1070px;" usemap="#map1557935974500"
+        src="https://www.lanetech.org/wp-content/uploads/2017/10/school_map2.png" alt="schoolMap2">
+        <map id="map1557935974500" name="map1557935974500"><area shape="rect" coords="7,8,920,1087" title="" alt="schoolMap2" href="https://lanetech.org/" target="_blank"></map>
+
+        <img id="scream" width="500" height="600" align="center" style="position:absolute; TOP:900px; LEFT:425Px;"
+        src="https://www.lanetech.org/wp-content/uploads/2017/10/school_map3.png" alt="schoolMap3">
+
+        <img id="scream" width="500" height="600" align="center" style="position:absolute; TOP:900px; LEFT:1070Px;"
+        src="https://www.lanetech.org/wp-content/uploads/2017/10/school_map4.png" alt="schoolMap4"> 
+        -->
+
+        <canvas id="myCanvas" width = "1920px" height ="1920px"> 
+            <!-- classroom outline 
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.strokeStyle("blue");
+            ctx.moveTo(400, 100);
+            ctx.lineTo(400, 400);
+            
+            ctx.stroke();-->
+             
+            <script>
+                
+            
+            function draw(){
+                var img = document.getElementById("map1");
+                var cnvs = document.getElementById("myCanvas");
+  
+                cnvs.style.position = "absolute";
+                cnvs.style.left = img.offsetLeft + "px";
+                cnvs.style.top = img.offsetTop + "px";
+  
+                var ctx = cnvs.getContext("2d");
+                ctx.beginPath();
+                //ctx.arc(250, 210, 200, 0, 2 * Math.PI, false);
+                ctx.strokeStyle = "blue";
+                ctx.lineWidth = 4;
+                
+                
+                // rooms 
+                
+                
+                 function unnamed() { // room above boys' locker room and weight room
+                    ctx.moveTo(31, 36);
+                    ctx.lineTo(31, 120);
+                    ctx.lineTo(208, 120);
+                    ctx.lineTo(208, 37);
+                    ctx.lineTo(31, 37);
+                 }
+                unnamed();
+                
+                function blr() { // boys' locker room
+                    ctx.moveTo(31, 120);
+                    ctx.lineTo(31, 230);
+                    ctx.lineTo(124, 230);
+                    ctx.lineTo(124, 120);
+                    ctx.lineTo(31, 120);
+                }
+                
+                blr();
+                
+                function weightRoom() { // weight room
+                    ctx.moveTo(124, 120);
+                    ctx.lineTo(124, 203);
+                    ctx.lineTo(208, 203);
+                    ctx.lineTo(208, 120);
+                    ctx.lineTo(124, 120);
+                }
+                weightRoom();
+                
+                function swimmingPool() { // swimming pool
+                    ctx.moveTo(31, 230);
+                    ctx.lineTo(31, 358);
+                    ctx.lineTo(218, 358);
+                    ctx.lineTo(218, 230);
+                    ctx.lineTo(31, 230);
+                }
+                swimmingPool();
+                
+                function glr() { // girls' locker room
+                    ctx.moveTo(31, 358);
+                    ctx.lineTo(31, 474);
+                    ctx.lineTo(108, 474);
+                    ctx.lineTo(108, 358);
+                }
+                glr();
+                
+                function mainOffice() { // main office
+                    ctx.moveTo(416, 203);
+                    ctx.lineTo(575, 203);
+                    ctx.lineTo(575, 155);
+                    ctx.lineTo(416, 155);
+                    ctx.lineTo(416, 203);
+                }
+                mainOffice();
+                
+                function auditorium() { // auditorium
+                    ctx.moveTo(776, 21);
+                    ctx.lineTo(776, 264);
+                    ctx.lineTo(981, 264);
+                    ctx.lineTo(981, 21);
+                    ctx.lineTo(776, 21);
+                }
+                auditorium();
+                
+                function studentCafeteria() { // student cafeteria
+                    ctx.moveTo(364, 600);
+                    ctx.lineTo(364, 751);
+                    ctx.lineTo(629, 751);
+                    ctx.lineTo(629, 600);
+                    ctx.lineTo(364, 600);
+                }
+                studentCafeteria();
+                
+                function memorialGarden() { // memorial garden
+                    ctx.moveTo(293, 278);
+                    ctx.lineTo(293, 460);
+                    ctx.lineTo(340, 460);
+                    ctx.lineTo(340, 445);
+                    ctx.lineTo(652, 445);
+                    ctx.lineTo(652, 460);
+                    ctx.lineTo(699, 460);
+                    ctx.lineTo(699, 278);
+                    ctx.lineTo(293, 278);
+                }
+                memorialGarden();
+                
+                function nurse() { // nurses' office
+                    ctx.moveTo(248, 360);
+                    ctx.lineTo(248, 384);
+                    ctx.lineTo(293, 384);
+                    ctx.lineTo(293, 360);
+                    ctx.lineTo(248, 360);
+                }
+                nurse();
+                
+                function attendance() { // attendance office
+                    ctx.moveTo(194, 473);
+                    ctx.lineTo(194, 494);
+                    ctx.lineTo(218, 494);
+                    ctx.lineTo(218, 473);
+                    ctx.lineTo(194, 473);
+                }
+                attendance();
+                
+                // classrooms 
+                
+                
+                function r112() { // classroom 112
+                    ctx.moveTo(248, 154);
+                    ctx.lineTo(248, 203);
+                    ctx.lineTo(317, 203);
+                    ctx.lineTo(317, 154);
+                    ctx.lineTo(248, 154);
+                }          
+                r112();
+                
+                function r104() { // classroom 104
+                    ctx.moveTo(317, 154);
+                    ctx.lineTo(317, 203);
+                    ctx.lineTo(386, 203);
+                    ctx.lineTo(386, 154);
+                    ctx.lineTo(317, 154);
+                }
+                r104();
+                
+                function r113() { // classroom 113
+                    ctx.moveTo(606, 154);
+                    ctx.lineTo(606, 203);
+                    ctx.lineTo(744, 203);
+                    ctx.lineTo(744, 154);
+                    ctx.lineTo(606, 154);
+                }
+                r113();
+                
+                function r110() { // classroom 110
+                    ctx.moveTo(293, 230);
+                    ctx.lineTo(293, 277);
+                    ctx.lineTo(353, 277);
+                    ctx.lineTo(353, 230);
+                    ctx.lineTo(293, 230);
+                }
+                r110();
+                
+                function r106() { // classroom 106
+                    ctx.moveTo(353, 230);
+                    ctx.lineTo(353, 277);
+                    ctx.lineTo(414, 277);
+                    ctx.lineTo(414, 230);
+                    ctx.lineTo(353, 230);
+                }
+                r106();
+                
+                function r114A() { // classroom 114 A
+                    ctx.moveTo(248, 277);
+                    ctx.lineTo(248, 300);
+                    ctx.lineTo(293, 300);
+                    ctx.lineTo(293, 277);
+                    ctx.lineTo(248, 277);
+                }
+                r114A();
+                
+                function r114() { // classroom 114
+                    ctx.moveTo(248, 300);
+                    ctx.lineTo(248, 360);
+                    ctx.lineTo(293, 360);
+                    ctx.lineTo(293, 300);
+                    ctx.lineTo(248, 300);
+                }
+                r114();
+                
+                function r120() { // classroom 120
+                    ctx.moveTo(248, 384);
+                    ctx.lineTo(248, 446);
+                    ctx.lineTo(293, 446);
+                    ctx.lineTo(293, 384);
+                    ctx.lineTo(248, 384);
+                }
+                r120();
+                
+                function r118() { // room 118 
+                    ctx.moveTo(139, 384);
+                    ctx.lineTo(139, 473);
+                    ctx.lineTo(218, 473);
+                    ctx.lineTo(218, 384);
+                    ctx.lineTo(139, 384);
+                }
+                r118();
+                
+                function r136() { // classroom 136
+                    ctx.moveTo(173, 520);
+                    ctx.lineTo(173, 626);
+                    ctx.lineTo(217, 626);
+                    ctx.lineTo(217, 520);
+                    ctx.lineTo(173, 520);
+                }
+                r136();
+                
+                function r138() { // classroom 138
+                    ctx.moveTo(173, 626);
+                    ctx.lineTo(173, 712);
+                    ctx.lineTo(217, 712);
+                    ctx.lineTo(217, 626);
+                    ctx.lineTo(173, 626);
+                }
+                r138();
+                
+                function r150() { // classroom 150
+                    ctx.moveTo(26, 712);
+                    ctx.lineTo(26, 765);
+                    ctx.lineTo(196, 765);
+                    ctx.lineTo(196, 712);
+                    ctx.lineTo(26, 712);
+                }
+                r150();
+                
+                function r154() { // classroom 154
+                    ctx.moveTo(26, 792);
+                    ctx.lineTo(26, 846);
+                    ctx.lineTo(218, 846);
+                    ctx.lineTo(218, 792);
+                    ctx.lineTo(26, 792);
+                }
+                r154();
+                
+                function r148() { // classroom 148
+                    ctx.moveTo(248, 785);
+                    ctx.lineTo(248, 846);
+                    ctx.lineTo(293, 846);
+                    ctx.lineTo(293, 785);
+                    ctx.lineTo(248, 785);
+                }
+                r148();
+                
+                function r146() { // classroom 146
+                    ctx.moveTo(248, 724);
+                    ctx.lineTo(248, 785);
+                    ctx.lineTo(293, 785);
+                    ctx.lineTo(293, 724);
+                    ctx.lineTo(248, 724);
+                }
+                r146();
+                
+                function r144() { // classroom 144
+                    ctx.moveTo(248, 663);
+                    ctx.lineTo(248, 785);
+                    ctx.lineTo(293, 785);
+                    ctx.lineTo(293, 663);
+                    ctx.lineTo(248, 663);
+                }
+                r144();
+                
+                function r140() { // classroom 140
+                    ctx.moveTo(248, 600);
+                    ctx.lineTo(248, 663);
+                    ctx.lineTo(293, 663);
+                    ctx.lineTo(293, 600);
+                    ctx.lineTo(248, 600);
+                }
+                r140();
+                
+                function r134() { // classroom 134
+                    ctx.moveTo(248, 520);
+                    ctx.lineTo(248, 567);
+                    ctx.lineTo(328, 567);
+                    ctx.lineTo(328, 520);
+                    ctx.lineTo(248, 520);
+                }
+                r134();
+                
+                function r132() { // classroom 132
+                    ctx.moveTo(358, 519);
+                    ctx.lineTo(358, 567);
+                    ctx.lineTo(419, 567);
+                    ctx.lineTo(419, 519);
+                    ctx.lineTo(360, 519);
+                }
+                r132();
+                
+                function r130() { // classroom 130
+                    ctx.moveTo(419, 519);
+                    ctx.lineTo(419, 567);
+                    ctx.lineTo(481, 567);
+                    ctx.lineTo(481, 519);
+                    ctx.lineTo(419, 519);
+                }
+                r130();
+                
+                function r122() { // classroom 122
+                    ctx.moveTo(293, 460);
+                    ctx.lineTo(293, 493);
+                    ctx.lineTo(340, 493);
+                    ctx.lineTo(340, 460);
+                    ctx.lineTo(293, 460);
+                }
+                r122();
+                
+                function r124() { // classroom 124
+                    ctx.moveTo(340, 445);
+                    ctx.lineTo(340, 493);
+                    ctx.lineTo(410, 493);
+                    ctx.lineTo(410, 445);
+                    ctx.lineTo(340, 445);
+                }
+                r124();
+                
+                function r128() { // classroom 128
+                    ctx.moveTo(410, 445);
+                    ctx.lineTo(410, 493);
+                    ctx.lineTo(481, 493);
+                    ctx.lineTo(481, 445);
+                    ctx.lineTo(410, 445);
+                }
+                r128();
+                
+                function r133() { // classroom 133
+                    ctx.moveTo(512, 445);
+                    ctx.lineTo(512, 493);
+                    ctx.lineTo(581, 493);
+                    ctx.lineTo(581, 445);
+                    ctx.lineTo(512, 445);
+                }
+                r133();
+                
+                function r129() { // classroom 129
+                    ctx.moveTo(581, 445);
+                    ctx.lineTo(581, 493);
+                    ctx.lineTo(652, 493);
+                    ctx.lineTo(652, 445);
+                    ctx.lineTo(581, 445);
+                }
+                r129();
+                
+                function r127() { // classroom 127
+                    ctx.moveTo(652, 460);
+                    ctx.lineTo(652, 493);
+                    ctx.lineTo(699, 493);
+                    ctx.lineTo(699, 460);
+                    ctx.lineTo(652, 460);
+                }
+                r127();
+                
+                function r135() { // classroom 135
+                    ctx.moveTo(512, 519);
+                    ctx.lineTo(512, 567);
+                    ctx.lineTo(625, 567);
+                    ctx.lineTo(625, 519);
+                    ctx.lineTo(512, 519);
+                }
+                r135();
+                
+                function r137() { // classroom 137
+                    ctx.moveTo(625, 519);
+                    ctx.lineTo(625, 567);
+                    ctx.lineTo(685, 567);
+                    ctx.lineTo(685, 519);
+                    ctx.lineTo(625, 519);
+                }
+                r137();
+                
+                function r139() { // classroom 139
+                    ctx.moveTo(685, 519);
+                    ctx.lineTo(685, 567);
+                    ctx.lineTo(745, 567);
+                    ctx.lineTo(745, 519);
+                    ctx.lineTo(685, 519);
+                }
+                r139();
+                
+                function r123() { // classroom 123
+                    ctx.moveTo(699, 445);
+                    ctx.lineTo(699, 361);
+                    ctx.lineTo(744, 361);
+                    ctx.lineTo(744, 445);
+                    ctx.lineTo(699, 445);
+                }
+                r123();
+                
+                function r115() { // classroom 115
+                    ctx.moveTo(699, 278);
+                    ctx.lineTo(699, 361);
+                    ctx.lineTo(744, 361);
+                    ctx.lineTo(744, 278);
+                    ctx.lineTo(699, 278);
+                }
+                r115();
+                
+                function r111() { // classroom 111
+                   ctx.moveTo(639, 230);
+                   ctx.lineTo(639, 277);
+                   ctx.lineTo(699, 277);
+                   ctx.lineTo(699, 230);
+                   ctx.lineTo(639, 230);
+                }
+                r111();
+                
+                function r107() { // classroom 107
+                  ctx.moveTo(578, 230);
+                  ctx.lineTo(578, 277);
+                  ctx.lineTo(639, 277);
+                  ctx.lineTo(639, 230);
+                  ctx.lineTo(578, 230);
+                }
+                r107();
+                
+                function office() { // front of main office (left)
+                    ctx.moveTo(444, 230);
+                    ctx.lineTo(444, 277);
+                    ctx.lineTo(479, 277);
+                    ctx.lineTo(479, 230);
+                    ctx.lineTo(444, 230);
+                }
+                office();
+                
+                function office1() { // front of main office (middle)
+                    ctx.moveTo(479, 230);
+                    ctx.lineTo(479, 277);
+                    ctx.lineTo(513, 277);
+                    ctx.lineTo(513, 230);
+                    ctx.lineTo(479, 230);
+                }
+                office1();
+                
+                function office2() { // front of main office (right)
+                    ctx.moveTo(513, 230);
+                    ctx.lineTo(513, 277);
+                    ctx.lineTo(548, 277);
+                    ctx.lineTo(548, 230);
+                    ctx.lineTo(513, 230);
+                }
+                office2();
+                
+                function r117() { // classroom 117
+                    ctx.moveTo(776, 292);
+                    ctx.lineTo(776, 323);
+                    ctx.lineTo(821, 323);
+                    ctx.lineTo(821, 292);
+                    ctx.lineTo(776, 292);
+                }
+                r117();
+                
+                function r119() { // classroom 119
+                    ctx.moveTo(776, 323);
+                    ctx.lineTo(776, 410);
+                    ctx.lineTo(821, 410);
+                    ctx.lineTo(821, 323);
+                    ctx.lineTo(776, 323);
+                }
+                r119();
+                
+                function r125() { // classroom 125
+                    ctx.moveTo(776, 410);
+                    ctx.lineTo(776, 493);
+                    ctx.lineTo(821, 493);
+                    ctx.lineTo(821, 410);
+                    ctx.lineTo(776, 410);
+                }
+                r125();
+                
+                function r141() { // classroom 141
+                    ctx.moveTo(776, 547);
+                    ctx.lineTo(776, 601);
+                    ctx.lineTo(821, 601);
+                    ctx.lineTo(821, 547);
+                    ctx.lineTo(776, 547);
+                }
+                r141();
+                
+                function r145() { // classroom 145
+                    ctx.moveTo(776, 601);
+                    ctx.lineTo(776, 700);
+                    ctx.lineTo(821, 700);
+                    ctx.lineTo(821, 601);
+                    ctx.lineTo(776, 601);
+                }
+                r145();
+                
+                function r151() { // classroom 151
+                    ctx.moveTo(776, 726);
+                    ctx.lineTo(776, 765);
+                    ctx.lineTo(858, 765);
+                    ctx.lineTo(858, 711);
+                    ctx.lineTo(821, 711);
+                    ctx.lineTo(821, 726);
+                    ctx.lineTo(776, 726);
+                }
+                r151();
+                
+                function r153() { // classroom 153
+                    ctx.moveTo(858, 711);
+                    ctx.lineTo(858, 765);
+                    ctx.lineTo(940, 765);
+                    ctx.lineTo(940, 711);
+                    ctx.lineTo(858, 711);
+                }
+                r153();
+                
+                function r153A() { // classroom 153A
+                    ctx.moveTo(940, 711);
+                    ctx.lineTo(940, 765);
+                    ctx.lineTo(968, 765);
+                    ctx.lineTo(968, 711);
+                    ctx.lineTo(940, 711);
+                }
+                r153A();
+                
+                function r155() { // classroom 155
+                    ctx.moveTo(901, 792);
+                    ctx.lineTo(901, 845);
+                    ctx.lineTo(968, 845);
+                    ctx.lineTo(968, 792);
+                    ctx.lineTo(901, 792);
+                }
+                r155();
+                
+                function r157() { // classroom 157
+                    ctx.moveTo(776, 792);
+                    ctx.lineTo(776, 845);
+                    ctx.lineTo(901, 845);
+                    ctx.lineTo(901, 792);
+                    ctx.lineTo(776, 792);
+                }
+                r157();
+                
+                function r161() { // classroom 161
+                    ctx.moveTo(701, 784);
+                    ctx.lineTo(701, 846);
+                    ctx.lineTo(745, 846);
+                    ctx.lineTo(745, 784);
+                    ctx.lineTo(701, 784);
+                }
+                r161();
+                
+                function r149() { // classroom 149
+                    ctx.moveTo(701, 726);
+                    ctx.lineTo(701, 784);
+                    ctx.lineTo(745, 784);
+                    ctx.lineTo(745, 726);
+                    ctx.lineTo(701, 726);
+                }
+                r149();
+                
+                function r147() { // classroom 147
+                    ctx.moveTo(701, 662);
+                    ctx.lineTo(701, 723);
+                    ctx.lineTo(745, 723);
+                    ctx.lineTo(745, 662);
+                    ctx.lineTo(701, 662);
+                }
+                r147();
+                
+                function r143() { // classroom 143
+                    ctx.moveTo(701,601);
+                    ctx.lineTo(701,662);
+                    ctx.lineTo(745,662);
+                    ctx.lineTo(745, 601);
+                    ctx.lineTo(700, 601);
+                }
+                r143();
+                
+                function untitled4() { // adjacent to 127 and boys' bathrrom (O)
+                    ctx.moveTo(699, 469);
+                    ctx.lineTo(699, 493);
+                    ctx.lineTo(745, 493);
+                    ctx.lineTo(745, 469);
+                    ctx.lineTo(699, 469);
+                }
+                untitled4();
+                
+                // bathrooms 
+                
+                function boysBrByD(){ // boys' bathroom by D
+                    ctx.moveTo(293, 230);
+                    ctx.lineTo(248, 230);
+                    ctx.lineTo(248, 277);
+                    ctx.lineTo(293, 277);
+                    ctx.lineTo(293, 230);
+                }
+                boysBrByD();
+                
+                function girlsBrByA(){ // girls' bathrrom by A
+                    ctx.moveTo(699, 230);
+                    ctx.moveTo(699, 277);
+                    ctx.lineTo(744, 277);
+                    ctx.lineTo(744, 230);
+                    ctx.lineTo(699, 230);
+                }
+                girlsBrByA();
+                
+                function boysBrByO() { // boys' bathrrom by O
+                    ctx.moveTo(699, 445);
+                    ctx.lineTo(699, 469);
+                    ctx.lineTo(744, 469);
+                    ctx.lineTo(744, 445);
+                    ctx.lineTo(699, 445);
+                }
+                boysBrByO();
+                
+                function brBy0() { // bathroom by O
+                    ctx.moveTo(776, 519);
+                    ctx.lineTo(776, 547);
+                    ctx.lineTo(821, 547);
+                    ctx.lineTo(821, 519);
+                    ctx.lineTo(776, 519);
+                }
+                brBy0();
+                
+                function brByM() { // bathroom by M
+                    ctx.moveTo(776, 700);
+                    ctx.lineTo(776, 726);
+                    ctx.lineTo(821, 726);
+                    ctx.lineTo(821, 700);
+                    ctx.lineTo(776, 700);
+                }
+                brByM();
+                
+                function girlsBrByH() { // girls' bathroom by H
+                    ctx.moveTo(293, 446);
+                    ctx.lineTo(293, 469);
+                    ctx.lineTo(248, 469);
+                    ctx.lineTo(248, 446);
+                    ctx.lineTo(293, 446);
+                }
+                girlsBrByH();
+                
+                function girlsBrByJ() { // girls' bathroom by J
+                    ctx.moveTo(196, 712);
+                    ctx.lineTo(196, 765);
+                    ctx.lineTo(217, 765);
+                    ctx.lineTo(217, 712);
+                    ctx.lineTo(196, 712);
+                }
+                girlsBrByJ();
+                
+                // elevators
+                
+                function elevatorB() { // elevator by staircase B
+                    ctx.moveTo(548, 203);
+                    ctx.lineTo(548, 230);
+                    ctx.lineTo(578, 230);
+                    ctx.lineTo(578, 203);
+                    ctx.lineTo(548, 203);
+                }
+                elevatorB();
+                
+                function elevatorH() { // elevator by staircase H
+                    ctx.moveTo(248, 469);
+                    ctx.lineTo(248, 493);
+                    ctx.lineTo(293, 493);
+                    ctx.lineTo(293, 469);
+                    ctx.lineTo(248, 469);
+                }
+                elevatorH();
+                
+                
+                // staircases 
+                
+                function staircaseD() { // staricase D
+                    ctx.moveTo(208, 203);
+                    ctx.lineTo(248, 203);
+                    ctx.lineTo(248, 153);
+                    ctx.lineTo(208, 153);
+                    ctx.lineTo(208, 203);
+                } 
+                staircaseD();
+                
+                function staircaseC() { // staircase C
+                    ctx.moveTo(414, 230);
+                    ctx.lineTo(414, 277);
+                    ctx.lineTo(444, 277);
+                    ctx.lineTo(444, 230);
+                    ctx.lineTo(414, 230);
+                }
+                staircaseC();
+                
+                function staircaseB() { // staircase B
+                    ctx.moveTo(548, 230);
+                    ctx.lineTo(548, 277);
+                    ctx.lineTo(578, 277);
+                    ctx.lineTo(578, 230);
+                    ctx.lineTo(548, 230);
+                }
+                staircaseB();
+               
+                function staricaseA() { //staircase A
+                    ctx.moveTo(744, 153);
+                    ctx.lineTo(744, 203);
+                    ctx.lineTo(776, 203);
+                    ctx.lineTo(776, 153);
+                    ctx.lineTo(744, 153);
+                }
+                staricaseA();
+               
+                function staircaseO() { // staircase O
+                    ctx.moveTo(776, 493);
+                    ctx.lineTo(776, 519);
+                    ctx.lineTo(821, 519);
+                    ctx.lineTo(821, 493);
+                    ctx.lineTo(776, 493);
+                }
+                staircaseO();
+               
+                function staircaseM() { // staircase M
+                    ctx.moveTo(745, 792);
+                    ctx.lineTo(745, 846);
+                    ctx.lineTo(776, 846);
+                    ctx.lineTo(776, 792);
+                    ctx.lineTo(745, 792);
+               }
+               staircaseM();
+               
+               function staircaseN() { // staircase N
+                    ctx.moveTo(920, 765);
+                    ctx.lineTo(920, 792);
+                    ctx.lineTo(968, 792);
+                    ctx.lineTo(969, 765);
+                    ctx.lineTo(920, 765);
+               }
+               staircaseN();
+               
+               function staircaseZ() { // staircase Z
+                    ctx.moveTo(481, 445);
+                    ctx.lineTo(481, 493);
+                    ctx.lineTo(512, 493);
+                    ctx.lineTo(512, 445);
+                    ctx.lineTo(481, 445);
+               }
+               staircaseZ();
+               
+               function staircaseJ() { // staircase J
+                   ctx.moveTo(217, 792);
+                   ctx.lineTo(217, 846);
+                   ctx.lineTo(248, 846);
+                   ctx.lineTo(248, 792);
+                   ctx.lineTo(217, 792);
+               }
+               staircaseJ();
+               
+               function staircaseH() { // staircase H
+                    ctx.moveTo(173, 493);
+                    ctx.lineTo(173, 520);
+                    ctx.lineTo(217, 520);
+                    ctx.lineTo(217, 493);
+                    ctx.lineTo(173, 493);
+               }
+               staircaseH();
+               
+               function staircaseG() { // staircase G
+                    ctx.moveTo(108, 360);
+                    ctx.lineTo(108, 384);
+                    ctx.lineTo(155, 384);
+                    ctx.lineTo(155, 360);
+                    ctx.lineTo(108, 360);
+               }
+               staircaseG();
+                
+                // hallways 
+                        // moving from staircase D - A - M - J
+                
+                function h1() { // between weight room and swimming pool
+                    ctx.moveTo(218, 230);
+                    ctx.lineTo(218, 203);
+                    ctx.lineTo(124, 203);
+                    ctx.lineTo(124, 230);
+                    ctx.lineTo(218, 230);
+                }
+                h1();
+                
+                function h2() { // middle of hallways -- D
+                    ctx.moveTo(218, 203);
+                    ctx.lineTo(218, 230);
+                    ctx.lineTo(248, 230);
+                    ctx.lineTo(248, 203);
+                    ctx.lineTo(218, 203);
+                }
+                h2();
+                
+                function h3() { // between 112 and boys bathroom
+                    ctx.moveTo(248, 203);
+                    ctx.lineTo(248, 230);
+                    ctx.lineTo(293, 230);
+                    ctx.lineTo(293, 203);
+                    ctx.lineTo(248, 203);
+                }
+                h3();
+                
+                function h4() { // between 112 and 110
+                    ctx.moveTo(293, 203);
+                    ctx.lineTo(293, 230);
+                    ctx.lineTo(317, 230);
+                    ctx.lineTo(317, 203);
+                    ctx.lineTo(293, 203);
+                }
+                h4();
+                
+                function h5() { // betweeen 104 and 110
+                    ctx.moveTo(317, 203);
+                    ctx.lineTo(317, 230);
+                    ctx.lineTo(353, 230);
+                    ctx.lineTo(352, 203);
+                    ctx.lineTo(317, 203);
+                }
+                h5();
+                
+                function h6() { // between 104 and 106
+                    ctx.moveTo(352, 203);
+                    ctx.lineTo(352, 230);
+                    ctx.lineTo(386, 230);
+                    ctx.lineTo(386, 203);
+                    ctx.lineTo(352, 203);
+                }
+                h6();
+                
+                function h7() { // between 106 and h7
+                    ctx.moveTo(386, 203);
+                    ctx.lineTo(386, 230);
+                    ctx.lineTo(414, 230);
+                    ctx.lineTo(414, 203);
+                    ctx.lineTo(386, 203);
+                }
+                h7();
+                
+                function h8() { // between 104 and office
+                    ctx.moveTo(386, 154);
+                    ctx.lineTo(386, 203);
+                    ctx.lineTo(414, 203);
+                    ctx.lineTo(414, 154);
+                    ctx.lineTo(386, 154);
+                }
+                h8();
+                
+                function h9() { // between staircase C and office
+                    ctx.moveTo(414, 203);
+                    ctx.lineTo(414, 230);
+                    ctx.lineTo(444, 230);
+                    ctx.lineTo(444, 203);
+                    ctx.lineTo(414, 203);
+                }
+                h9();
+                
+                function h10() { // between office and untitled1
+                    ctx.moveTo(444, 203);
+                    ctx.lineTo(479, 203);
+                    ctx.lineTo(479, 230);
+                    ctx.lineTo(479, 203);
+                    ctx.lineTo(444, 203);
+                }
+                h10();
+                
+                function h11() { // between office and untitled2
+                    ctx.moveTo(479, 203);
+                    ctx.lineTo(479, 230);
+                    ctx.lineTo(513, 230);
+                    ctx.lineTo(513, 203);
+                    ctx.lineTo(479, 203);
+                }
+                h11();
+                
+                function h12() { // between office and untitled3
+                    ctx.moveTo(513, 203);
+                    ctx.lineTo(513, 230);
+                    ctx.lineTo(548, 230);
+                    ctx.lineTo(548, 203);
+                    ctx.lineTo(513, 203);
+                }
+                h12();
+                
+                function h13() { // between staircase B and office
+                    ctx.moveTo(548, 203);
+                    ctx.lineTo(548, 230);
+                    ctx.lineTo(578, 230);
+                    ctx.lineTo(578, 203);
+                    ctx.lineTo(548, 203);
+                }
+                h13();
+               
+                function h14() { // between office and 113
+                    ctx.moveTo(575, 155);
+                    ctx.lineTo(575, 203);
+                    ctx.lineTo(606, 203);
+                    ctx.lineTo(606, 155);
+                    ctx.lineTo(575, 155);
+                }
+                h14();
+                
+                function h15() { // between h14 and 107
+                    ctx.moveTo(575, 203);
+                    ctx.lineTo(575, 230);
+                    ctx.lineTo(606, 230);
+                    ctx.lineTo(606, 203);
+                    ctx.lineTo(575, 203);
+                }
+                h15();
+                
+                function h16() { // between 107 and 113
+                    ctx.moveTo(606, 203);
+                    ctx.lineTo(606, 230);
+                    ctx.lineTo(639, 230);
+                    ctx.lineTo(639, 203);
+                    ctx.lineTo(606, 203);
+                }
+                h16();
+                
+                function h17() { // between 111 and 113
+                    ctx.moveTo(639, 203);
+                    ctx.lineTo(639, 230);
+                    ctx.lineTo(699, 230);
+                    ctx.lineTo(699, 203);
+                    ctx.lineTo(639, 203);
+                }
+                h17();
+                
+                function h18() { // between 113 and girls' bathroom
+                    ctx.moveTo(699, 203);
+                    ctx.lineTo(699, 230);
+                    ctx.lineTo(744, 230);
+                    ctx.lineTo(744, 203);
+                    ctx.lineTo(699, 203);
+                }
+                h18();
+                
+                function h19() { // middle of hallways -- A 
+                    ctx.moveTo(744, 203);
+                    ctx.lineTo(744, 230);
+                    ctx.lineTo(776, 230);
+                    ctx.lineTo(776, 203);
+                    ctx.lineTo(744, 203);
+                }
+                h19();
+                
+                function h20() { // between girls' bathroom and auditorium
+                    ctx.moveTo(744, 230);
+                    ctx.lineTo(744, 264);
+                    ctx.lineTo(776, 264);
+                    ctx.lineTo(776, 230);
+                    ctx.lineTo(744, 230);
+                }
+                h20();
+                
+                function h21() { // between girls' bathroom and exit
+                    ctx.moveTo(744, 264);
+                    ctx.lineTo(744, 277);
+                    ctx.lineTo(776, 277);
+                    ctx.lineTo(776, 264);
+                    ctx.lineTo(744, 264);
+                }
+                h21();
+                
+                function h22() { // exit between auditorium and 117
+                    ctx.moveTo(776, 264);
+                    ctx.lineTo(776, 292);
+                    ctx.lineTo(821, 292);
+                    ctx.lineTo(821, 264);
+                    ctx.lineTo(776, 264);
+                }
+                h22();
+                
+                function h23() { // between 115 and h22
+                    ctx.moveTo(744, 277);
+                    ctx.lineTo(744, 292);
+                    ctx.lineTo(776, 292);
+                    ctx.lineTo(776, 277);
+                    ctx.lineTo(744, 277);
+                }
+                h23();
+                
+                function h24() { // betweeen 115 and 117
+                    ctx.moveTo(744, 292);
+                    ctx.lineTo(744, 323);
+                    ctx.lineTo(776, 323);
+                    ctx.lineTo(776, 292);
+                    ctx.lineTo(744, 292);
+                }
+                h24();
+                
+                function h25() { // between 115 and 119
+                    ctx.moveTo(744, 323);
+                    ctx.lineTo(744, 361);
+                    ctx.lineTo(776, 361);
+                    ctx.lineTo(776, 323);
+                    ctx.lineTo(744, 323);
+                }
+                h25();
+                
+                function h26() { // between 123 and 119
+                    ctx.moveTo(744, 361);
+                    ctx.lineTo(744, 410);
+                    ctx.lineTo(776, 410);
+                    ctx.lineTo(776, 361);
+                    ctx.lineTo(744, 361);
+                }
+                h26();
+                
+                function h27() { // between 123 and 125
+                    ctx.moveTo(744, 410);
+                    ctx.lineTo(744, 445);
+                    ctx.lineTo(776, 445);
+                    ctx.lineTo(776, 410);
+                    ctx.lineTo(744, 410);
+                }
+                h27();
+                
+                function h28() { // between boys' bathroom and 125
+                    ctx.moveTo(744, 445);
+                    ctx.lineTo(744, 469);
+                    ctx.lineTo(776, 469);
+                    ctx.lineTo(776, 445);
+                    ctx.lineTo(744, 445);
+                }
+                h28();
+                
+                function h29() { // between untitled4 and 125
+                    ctx.moveTo(744, 469);
+                    ctx.lineTo(744, 493);
+                    ctx.lineTo(776, 493);
+                    ctx.lineTo(776, 469);
+                    ctx.lineTo(744, 469);
+                }
+                h29();
+                
+                function h30() { // middle of hallway -- O
+                    ctx.moveTo(744, 493);
+                    ctx.lineTo(744, 519);
+                    ctx.lineTo(776, 519);
+                    ctx.lineTo(776, 493);
+                    ctx.lineTo(744, 493);
+                }
+                h30();
+                
+                function h31() { // between 139 and bathroom by O
+                    ctx.moveTo(744, 519);
+                    ctx.lineTo(744, 547);
+                    ctx.lineTo(776, 547);
+                    ctx.lineTo(776, 519);
+                    ctx.lineTo(744, 519);
+                }
+                h31();
+                
+                function h32() { // between 139 and 141
+                    ctx.moveTo(744, 547);
+                    ctx.lineTo(744, 567);
+                    ctx.lineTo(776, 567);
+                    ctx.lineTo(776, 547);
+                    ctx.lineTo(744, 547);
+                }
+                h32();
+                
+                function h33() { // between 139 and 143
+                    ctx.moveTo(701, 567);
+                    ctx.lineTo(701, 601);
+                    ctx.lineTo(745, 601);
+                    ctx.lineTo(745, 567);
+                    ctx.lineTo(701, 567);
+                }
+                h33();
+                
+                function h34() { // between h33 and 141
+                    ctx.moveTo(745, 567);
+                    ctx.lineTo(745, 601);
+                    ctx.lineTo(776, 601);
+                    ctx.lineTo(776, 567);
+                    ctx.lineTo(745, 567);
+                }
+                h34();
+                
+                function h35() { // between 143 and 145
+                    ctx.moveTo(745, 601);
+                    ctx.lineTo(745, 662);
+                    ctx.lineTo(776, 662);
+                    ctx.lineTo(776, 601);
+                    ctx.lineTo(745, 601);
+                }
+                h35();
+                
+                function h36() { // between 145 and 147
+                    ctx.moveTo(745, 662);
+                    ctx.lineTo(745, 700);
+                    ctx.lineTo(776, 700);
+                    ctx.lineTo(776, 662);
+                    ctx.lineTo(745, 662);
+                }
+                h36();
+                
+                function h37() { // between 147 and bathroom by M
+                    ctx.moveTo(745, 700);
+                    ctx.lineTo(745, 726);
+                    ctx.lineTo(776, 726);
+                    ctx.lineTo(776, 700);
+                    ctx.lineTo(745, 700);
+                }
+                h37();
+                
+                function h38() { // between 151 and 149
+                    ctx.moveTo(745, 726);
+                    ctx.lineTo(745, 765);
+                    ctx.lineTo(776, 765);
+                    ctx.lineTo(776, 726);
+                    ctx.lineTo(745, 726);
+                }
+                h38();
+                
+                function h39() { // middle of hallway -- M
+                    ctx.moveTo(745, 765);
+                    ctx.lineTo(745, 792);
+                    ctx.lineTo(776, 792);
+                    ctx.lineTo(776, 765);
+                    ctx.lineTo(745, 765);
+                }
+                h39();
+                
+                function h40() { // between 161 and 157
+                    ctx.moveTo(745, 784);
+                    ctx.lineTo(745, 846);
+                    ctx.lineTo(776, 846);
+                    ctx.lineTo(776, 784);
+                    ctx.lineTo(745, 784);
+                }
+                h40();
+                
+                function h41() { // between 151 and 157
+                    ctx.moveTo(776, 765);
+                    ctx.lineTo(776, 792);
+                    ctx.lineTo(858, 792);
+                    ctx.lineTo(858, 765);
+                    ctx.lineTo(776, 765);
+                }
+                h41();
+                
+                function h42() { // between 157 and 153
+                    ctx.moveTo(858, 765);
+                    ctx.lineTo(858, 792);
+                    ctx.lineTo(901, 792);
+                    ctx.lineTo(901, 765);
+                    ctx.lineTo(858, 765);
+                }
+                h42();
+                
+                function h43() { // between 153 and 155
+                    ctx.moveTo(901, 765);
+                    ctx.lineTo(901, 792);
+                    ctx.lineTo(940, 792);
+                    ctx.lineTo(940, 765);
+                    ctx.lineTo(901, 765);
+                }
+                h43();
+                
+                function h44() { // between 153A and 155
+                    ctx.moveTo(940, 765);
+                    ctx.lineTo(940, 792);
+                    ctx.lineTo(968, 792);
+                    ctx.lineTo(968, 765);
+                    ctx.lineTo(940, 765);
+                }
+                h44();
+                
+                function h45() { // between untitled and 139
+                    ctx.moveTo(699, 493);
+                    ctx.lineTo(699, 519);
+                    ctx.lineTo(745, 519);
+                    ctx.lineTo(745, 493);
+                    ctx.lineTo(699, 493);
+                }
+                h45();
+                
+                function h46() { // between 127 and 139
+                    ctx.moveTo(685, 493);
+                    ctx.lineTo(685, 519);
+                    ctx.lineTo(699, 519);
+                    ctx.lineTo(699, 493);
+                    ctx.lineTo(685, 493);
+                }
+                h46();
+                
+                function h47() { // between 137 and 127
+                    ctx.moveTo(652, 493);
+                    ctx.lineTo(652, 519);
+                    ctx.lineTo(685, 519);
+                    ctx.lineTo(685, 493);
+                    ctx.lineTo(652, 493);
+                }
+                h47();
+                
+                function h48() { // between 129 and 137
+                    ctx.moveTo(625, 493);
+                    ctx.lineTo(625, 519);
+                    ctx.lineTo(685, 519);
+                    ctx.lineTo(685, 493);
+                    ctx.lineTo(625, 493);
+                }
+                h48();
+                
+                function h49() { // between 135 and 129
+                    ctx.moveTo(581, 493);
+                    ctx.lineTo(581, 519);
+                    ctx.lineTo(625, 519);
+                    ctx.lineTo(625, 493);
+                    ctx.lineTo(581, 493);
+                }
+                h49();
+                
+                function h50() { // between 133 and 135
+                    ctx.moveTo(512, 493);
+                    ctx.lineTo(512, 519);
+                    ctx.lineTo(581, 519);
+                    ctx.lineTo(581, 493);
+                    ctx.lineTo(512, 493);
+                }
+                h50();
+                
+                function h51() { // middle of hallway -- Z
+                    ctx.moveTo(481, 493);
+                    ctx.lineTo(481, 519);
+                    ctx.lineTo(512, 519);
+                    ctx.lineTo(512, 493);
+                    ctx.lineTo(481, 493);
+                }
+                h51();
+                
+                function h52() { // between 130 and 135
+                    ctx.moveTo(481, 519);
+                    ctx.lineTo(481, 567);
+                    ctx.lineTo(512, 567);
+                    ctx.lineTo(512, 519);
+                    ctx.lineTo(481, 519);
+                }
+                h52();
+                
+                function h53() { // between 128 and 130
+                    ctx.moveTo(419, 493);
+                    ctx.lineTo(419, 519);
+                    ctx.lineTo(512, 519);
+                    ctx.lineTo(512, 493);
+                    ctx.lineTo(419, 493);
+                }
+                h53();
+                
+                function h54() { // between 132 and 128
+                    ctx.moveTo(410, 493);
+                    ctx.lineTo(410, 519);
+                    ctx.lineTo(419, 519);
+                    ctx.lineTo(419, 493);
+                    ctx.lineTo(410, 493);
+                }
+                h54();
+                
+                function h55() { // between 124 and 132
+                    ctx.moveTo(358, 493);
+                    ctx.lineTo(358, 519);
+                    ctx.lineTo(410, 519);
+                    ctx.lineTo(410, 493);
+                    ctx.lineTo(358, 493);
+                }
+                h55();
+                
+                function h56() { // between 134 and 132
+                    ctx.moveTo(328, 520);
+                    ctx.lineTo(328, 567);
+                    ctx.lineTo(358, 567);
+                    ctx.lineTo(358, 520);
+                    ctx.lineTo(328, 520);
+                }
+                h56();
+                
+                function h57() { // between 124 and h56
+                    ctx.moveTo(340, 493);
+                    ctx.lineTo(340, 519);
+                    ctx.lineTo(328, 519);
+                    ctx.lineTo(328, 493);
+                    ctx.lineTo(340, 493);
+                }
+                h57();
+                
+                function h58() { // between 122 and 134
+                    ctx.moveTo(293, 493);
+                    ctx.lineTo(293, 519);
+                    ctx.lineTo(328, 519);
+                    ctx.lineTo(328, 493);
+                    ctx.lineTo(293, 493);
+                }
+                h58();
+                
+                function h59() { // between elevator by H and 134
+                    ctx.moveTo(248, 493);
+                    ctx.lineTo(248, 519);
+                    ctx.lineTo(293, 519);
+                    ctx.lineTo(293, 493);
+                    ctx.lineTo(248, 493);
+                }
+                h59();
+                
+                function h60() { // between 134 and 140
+                    ctx.moveTo(248, 567);
+                    ctx.lineTo(248, 600);
+                    ctx.lineTo(293, 600);
+                    ctx.lineTo(293, 567);
+                    ctx.lineTo(248, 567);
+                }
+                h60();
+                
+                function h61() { // between 150 and 154
+                    ctx.moveTo(26, 765);
+                    ctx.lineTo(26, 792);
+                    ctx.lineTo(196, 792);
+                    ctx.lineTo(196, 765);
+                    ctx.lineTo(26, 765);
+                }
+                h61();
+                
+                function h62() { // between girls' bathroom by J and 154
+                    ctx.moveTo(196, 765);
+                    ctx.lineTo(196, 792);
+                    ctx.lineTo(218, 792);
+                    ctx.lineTo(218, 765);
+                    ctx.lineTo(196, 765);
+                }
+                h62();
+                
+                function h63() { // between 154 and 148
+                    ctx.moveTo(218, 785);
+                    ctx.lineTo(218, 846);
+                    ctx.lineTo(248, 846);
+                    ctx.lineTo(248, 785);
+                    ctx.lineTo(218, 785);
+                }
+                h63();
+                
+                function h67() { // between girls' bathroom by J and 146
+                    ctx.moveTo(218, 724);
+                    ctx.lineTo(218, 785);
+                    ctx.lineTo(248, 785);
+                    ctx.lineTo(248, 724);
+                    ctx.lineTo(218, 724);
+                }
+                h67();
+                
+                function h68() { // between 138 and 144
+                    ctx.moveTo(218, 663);
+                    ctx.lineTo(218, 724);
+                    ctx.lineTo(248, 724);
+                    ctx.lineTo(248, 663);
+                    ctx.lineTo(218, 663);
+                }
+                h68();
+                
+                function h69() { // between 138 and 140
+                    ctx.moveTo(218, 600);
+                    ctx.lineTo(218, 663);
+                    ctx.lineTo(248, 663);
+                    ctx.lineTo(248, 600);
+                    ctx.lineTo(218, 600);
+                }
+                h69();
+                
+                function h70() { // between 136 and 140
+                    ctx.moveTo(218, 626);
+                    ctx.lineTo(218, 663);
+                    ctx.lineTo(248, 663);
+                    ctx.lineTo(248, 626);
+                    ctx.lineTo(218, 626);
+                }
+                h70();
+                
+                function h71() { // between 136 and h60
+                    ctx.moveTo(218, 567);
+                    ctx.lineTo(218, 600);
+                    ctx.lineTo(248, 600);
+                    ctx.lineTo(248, 567);
+                    ctx.lineTo(218, 567);
+                }
+                h71();
+                
+                function h72() { // between 136 and 134
+                    ctx.moveTo(218, 520);
+                    ctx.lineTo(218, 626);
+                    ctx.lineTo(248, 626);
+                    ctx.lineTo(248, 520);
+                    ctx.lineTo(218, 520);
+                }
+                h72();
+                
+                function h73() { // middle of hallway -- H
+                    ctx.moveTo(218, 493);
+                    ctx.lineTo(218, 520);
+                    ctx.lineTo(248, 520);
+                    ctx.lineTo(248, 493);
+                    ctx.lineTo(218, 493);
+                }
+                h73();
+                
+                function h74() { // between elevator and attendance office
+                    ctx.moveTo(218, 473);
+                    ctx.lineTo(218, 493);
+                    ctx.lineTo(248, 493);
+                    ctx.lineTo(248, 473);
+                    ctx.lineTo(218, 473);
+                }
+                h74();
+                
+                function h75() { // between girls' bathroom by H and 118
+                    ctx.moveTo(218, 446);
+                    ctx.lineTo(218, 473);
+                    ctx.lineTo(248, 473);
+                    ctx.lineTo(248, 446);
+                    ctx.lineTo(218, 446);
+                }
+                h75();
+                
+                function h76() { // between 118 and 120
+                    ctx.moveTo(218, 384);
+                    ctx.lineTo(218, 446);
+                    ctx.lineTo(248, 446);
+                    ctx.lineTo(248, 384);
+                    ctx.lineTo(218, 384);
+                }
+                h76();
+                
+                function h77() { // middle of hallway -- G
+                    ctx.moveTo(218, 360);
+                    ctx.lineTo(218, 384);
+                    ctx.lineTo(248, 384);
+                    ctx.lineTo(248, 360);
+                    ctx.lineTo(218, 360); 
+                }
+                h77();
+                
+                function h78() { // between 114 and swimming pool
+                    ctx.moveTo(218, 300);
+                    ctx.lineTo(218, 360);
+                    ctx.lineTo(248, 360);
+                    ctx.lineTo(248, 300);
+                    ctx.lineTo(218, 300);
+                }
+                h78();
+                
+                function h79() { // between swimming pool and 114A
+                    ctx.moveTo(218, 277);
+                    ctx.lineTo(218, 300);
+                    ctx.lineTo(248, 300);
+                    ctx.lineTo(248, 277);
+                    ctx.lineTo(218, 277);
+                }
+                h79();
+                
+                function h80() { // between swimming pool and boys' bathroom by D
+                    ctx.moveTo(218, 230);
+                    ctx.lineTo(218, 277);
+                    ctx.lineTo(248, 277);
+                    ctx.lineTo(248, 230);
+                    ctx.lineTo(218, 230);
+                }
+                h80();
+                
+                function h81() { // between swimming pool and 118
+                    ctx.moveTo(155, 360);
+                    ctx.lineTo(155, 384);
+                    ctx.lineTo(248, 384);
+                    ctx.lineTo(248, 360);
+                    ctx.lineTo(155, 360);
+                }
+                h81();
+                
+                function h82() { // between girls' locker room and 118
+                    ctx.moveTo(108, 384);
+                    ctx.lineTo(108, 473);
+                    ctx.lineTo(139, 473);
+                    ctx.lineTo(139, 384);
+                    ctx.lineTo(108, 384);
+                }
+                h82();
+                
+                ctx.stroke();
+            }
+            
+            draw();
+            
+            if(a == "154"){
+                r154();
+                if(b == "150") {
+                    r150();
+                }
+                if(b == "148") {
+                    r148();
+                }
+            }
+            
+            </script>
+            
+        </canvas>
+
+    </body>
+       
+         <img id="banner1" style="color: #FFD700;"  border="1" 
+            src="Screen Shot 2019-05-17 at 10.12.43 AM.png"> 
+          
+        
+</html>
+      
